@@ -1,0 +1,10 @@
+let camera, scene, renderer, controls, model, helper;
+let mouthOpen = false;
+let lastTime = Date.now();
+let breathFactor = 0; // 呼吸动画的强度因子
+let breathDirection = 1; // 呼吸动画的方向控制
+let blinkInterval = 3000; // 眨眼间隔（毫秒）
+let lastBlinkTime = Date.now(); // 上次眨眼的时间
+let isBlinking = false; // 当前是否正在眨眼
+let mouthYValue = 0; // 用于存储API返回的mouth_y值
+const mmdPath = 'assets/mmd_model/
