@@ -32,10 +32,10 @@ def text_chat(event=None):  # 发送消息
         pg.quit()
         msg = input_box.get("1.0", "end").strip()
         if voice_option_menu.get() == "实时语音识别":
-            messagebox.showinfo("提示", "请关闭实时语音识别后\n再打字发送")
+            messagebox.showinfo("ヒント", "リアルタイム音声認識をオフにしてから\n文字で送信してください")
             return
         if msg == "":
-            messagebox.showinfo("提示", "请输入内容后再发送")
+            messagebox.showinfo("ヒント", "内容を入力してから送信してください")
             return
         input_box.delete("1.0", "end")
         common_chat(msg)
@@ -99,9 +99,9 @@ def sensevoice_th_break():  # 语音识别(实时语音打断模式)
 
 def switch_voice(event=None):  # 切换语音识别
     if voice_option_menu.get() == "实时语音识别":
-        voice_var.set("关闭语音识别")
+        voice_var.set("音声認識をオフにする")
     elif voice_option_menu.get() == "关闭语音识别":
-        voice_var.set("实时语音识别")
+        voice_var.set("リアルタイム音声認識")
 
 
 Thread(target=run_live2d).start()
